@@ -15,14 +15,53 @@
   <link href="style.css" rel="stylesheet"/>
 
   <style>
+
     .team-heading {
       font-family: Manrope, Arial, sans-serif;
-      font-size: clamp(38px, 4vw, 58px);
-      font-weight: 750;
+      font-size: clamp(42px, 4.4vw, 64px);
+      font-weight: 800;
       letter-spacing: -0.045em;
-      line-height: 1.15;
-      margin: 0 0 30px;
+      line-height: 1.12;
+      margin: 0 0 12px;
+      color: #32191a;
     }
+    .team-intro { max-width: 760px; margin: 0; color: #5c626b; font-size: clamp(17px, 1.45vw, 20px); line-height: 1.65; }
+    .group-photo-section { margin: 0 0 48px; }
+    .group-photo-placeholder { position: relative; min-height: clamp(245px, 31vw, 390px); overflow: hidden; display: grid; place-items: center; isolation: isolate; border-radius: 20px; color: white; text-align: center; background: radial-gradient(ellipse at 50% 115%, rgba(224,190,111,.54), transparent 42%), linear-gradient(120deg, #351316 0%, #681c24 52%, #311317 100%); box-shadow: 0 18px 46px rgba(50,25,26,.16); }
+    .group-photo-placeholder::before,.group-photo-placeholder::after { content: ""; position: absolute; z-index: -1; border: 1px solid rgba(255,255,255,.18); border-radius: 50%; width: min(55vw, 620px); aspect-ratio: 1; }
+    .group-photo-placeholder::before { left: -13%; bottom: -70%; }
+    .group-photo-placeholder::after { right: -12%; top: -80%; width: min(48vw, 520px); border-color: rgba(229,198,128,.35); }
+    .group-photo-content { position: relative; z-index: 1; padding: 28px; }
+    .group-photo-kicker { color: #f0d58e; font-size: 13px; font-weight: 800; letter-spacing: .17em; text-transform: uppercase; }
+    .group-photo-content h2 { margin: 10px 0 5px; font-family: Manrope, Arial, sans-serif; font-size: clamp(30px, 4vw, 49px); letter-spacing: -.035em; }
+    .group-photo-content p { margin: 0; color: rgba(255,255,255,.82); font-size: 17px; }
+    .people-hierarchy { gap: 34px; }
+    .section-label { font-size: 15px; letter-spacing: .15em; color: #781b23; padding-bottom: 11px; }
+    .people-row { gap: 20px; }
+    .people-row .person { min-height: 190px; border-radius: 14px; }
+    .people-row .portrait { min-height: 190px; width: 158px; flex-basis: 158px; background: #f4f1ed; }
+    .people-row .portrait img { object-fit: cover; }
+    .people-row .inside { padding: 20px 22px; }
+    .people-row .role { font-size: 12px; letter-spacing: .13em; }
+    .people-row .inside h3 { margin: 0 0 9px; font-family: Manrope, Arial, sans-serif; font-size: clamp(23px, 2vw, 28px); line-height: 1.2; font-weight: 800; letter-spacing: -.025em; color: #42191c; }
+    .people-row .inside p { margin: 0; font-size: 16px; line-height: 1.65; color: #555c65; }
+    .student-meta { display: inline-block; margin-top: 7px; color: #626973; font-size: 14px; line-height: 1.6; }
+    .student-meta strong { color: #3e4148; }
+    .portrait-placeholder { flex-direction: column; gap: 8px; color: #781b23; background: radial-gradient(circle at 50% 35%, #fff 0 18%, transparent 19%), linear-gradient(145deg,#f4f1ed,#e8e2d9) !important; }
+    .portrait-placeholder span { display: grid; place-items: center; width: 76px; height: 76px; border-radius: 50%; color: #fff; background: #781b23; font: 800 27px Manrope,Arial,sans-serif; box-shadow: 0 5px 16px rgba(64,20,24,.2); }
+    .portrait-placeholder small { color: #6b6060; font-size: 12px; font-weight: 700; }
+    @media(max-width: 700px) {
+      .group-photo-section { margin-bottom: 38px; }
+      .group-photo-placeholder { min-height: 245px; border-radius: 15px; }
+      .people-row .person { min-height: 0; }
+      .people-row .portrait { width: 130px; flex-basis: 130px; min-height: 175px; }
+      .people-row .inside { padding: 17px; }
+    }
+    @media(max-width: 470px) {
+      .people-row .portrait { width: 100%; flex-basis: auto; height: 220px; }
+      .people-row .inside h3 { font-size: 25px; }
+    }
+
   </style>
 </head>
 
@@ -31,7 +70,7 @@
   <!-- HEADER -->
   <header>
     <a class="brand" href="index.html">
-      <img alt="SAMS Lab logo" src="assets/logo.webp"/>
+      <img alt="SAMS Lab logo" src="assets/SAMS-Logo.png"/>
 
       <span class="brand-text">
         <strong>SAMS Laboratory</strong>
@@ -62,7 +101,21 @@
 
       <div class="page-top">
         <h1 class="team-heading">Our Team</h1>
+        <p class="team-intro">Meet the students and researchers advancing safe, intelligent mobility at the SAMS Laboratory.</p>
       </div>
+
+      <!-- Group photo slot: add the photo as assets/SAMS Lab Group Photo- Fall 2026.jpg when available. -->
+      <section class="group-photo-section" aria-labelledby="group-photo-heading">
+        <div class="group-photo-placeholder" role="img" aria-label="Fall 2026 SAMS Laboratory group photo will be added soon">
+          <div class="group-photo-content">
+            <span class="group-photo-kicker">SAMS Laboratory · Fall 2026</span>
+            <h2 id="group-photo-heading">Our team, together</h2>
+            <p>Group photo coming soon</p>
+          </div>
+          <span class="group-photo-orbit orbit-one" aria-hidden="true"></span>
+          <span class="group-photo-orbit orbit-two" aria-hidden="true"></span>
+        </div>
+      </section>
 
       <div class="people-hierarchy">
 
@@ -183,9 +236,9 @@
 
                 <p>
                   Ph.D. student in Mechanical Engineering.
-                  Research interests: autonomous driving,
-                  machine learning, dynamic systems,
-                  and intelligent control.
+                  Research focus: autonomous driving, machine learning,
+                  dynamic systems, and intelligent control.<br />
+                  <span class="student-meta"><strong>Expected graduation:</strong> To be confirmed</span>
                 </p>
 
                 <div class="social-links"
@@ -262,8 +315,9 @@
                 <h3>Masum Billah Pial</h3>
 
                 <p>
-                  M.Sc. student in Mechanical and Manufacturing
-                  Engineering at Texas State University.
+                  M.Sc. student in Mechanical and Manufacturing Engineering
+                  at Texas State University.<br />
+                  <span class="student-meta"><strong>Research focus:</strong> To be confirmed<br /><strong>Expected graduation:</strong> To be confirmed</span>
                 </p>
 
                 <div class="social-links"
@@ -350,7 +404,9 @@
                 <h3>Kidus A. Beshah</h3>
 
                 <p>
-                  Undergraduate researcher at SAMS Laboratory.
+                  Undergraduate researcher exploring unmanned aerial vehicles
+                  and autonomous aerial systems.<br />
+                  <span class="student-meta"><strong>Expected graduation:</strong> To be confirmed</span>
                 </p>
 
                 <div class="social-links"
@@ -405,6 +461,22 @@
                   </a>
 
                 </div>
+              </div>
+            </article>
+
+            <!-- SONU -->
+            <article class="card person">
+              <div class="portrait portrait-placeholder" role="img" aria-label="Photo of Sonu K Yadav will be added soon">
+                <span aria-hidden="true">SY</span>
+                <small>Photo coming soon</small>
+              </div>
+              <div class="inside">
+                <div class="role">Undergraduate Researcher</div>
+                <h3>Sonu K Yadav</h3>
+                <p>
+                  Undergraduate researcher at the SAMS Laboratory.<br />
+                  <span class="student-meta"><strong>Research focus:</strong> To be confirmed<br /><strong>Expected graduation:</strong> To be confirmed</span>
+                </p>
               </div>
             </article>
 
