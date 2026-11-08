@@ -104,7 +104,7 @@ main.overlay-page .hero-overlay{flex:1}
 body.home .hero-overlay{padding-top:clamp(70px,9vw,135px);padding-bottom:clamp(28px,4vw,56px)}
 
 /* ===== Research Areas slideshow with side peeks ===== */
-.ra-carousel{--w:58%;--gap:24px;position:relative;max-width:1300px;margin:0 auto}
+.ra-carousel{--w:58%;--gap:24px;position:relative;max-width:1000px;margin:0 auto}
 .ra-stage{position:relative;width:100%;padding-top:calc(var(--w) * 9 / 16 + 66px);overflow:hidden}
 .ra-slide{position:absolute;top:0;left:calc((100% - var(--w)) / 2);width:var(--w);display:block;text-align:center;transform:translateX(calc(var(--o,0) * (100% + var(--gap)))) scale(var(--sc,1));opacity:var(--op,1);transition:transform .4s ease,opacity .4s ease;transform-origin:center top;z-index:1}
 .ra-slide.is-active{--sc:1;--op:1;z-index:2}
