@@ -27,14 +27,26 @@
     }
     .team-intro { max-width: 760px; margin: 0; color: #5c626b; font-size: clamp(17px, 1.45vw, 20px); line-height: 1.65; }
     .group-photo-section { margin: 0 0 48px; }
-    .group-photo-placeholder { position: relative; min-height: clamp(245px, 31vw, 390px); overflow: hidden; display: grid; place-items: center; isolation: isolate; border-radius: 20px; color: white; text-align: center; background: radial-gradient(ellipse at 50% 115%, rgba(224,190,111,.54), transparent 42%), linear-gradient(120deg, #351316 0%, #681c24 52%, #311317 100%); box-shadow: 0 18px 46px rgba(50,25,26,.16); }
-    .group-photo-placeholder::before,.group-photo-placeholder::after { content: ""; position: absolute; z-index: -1; border: 1px solid rgba(255,255,255,.18); border-radius: 50%; width: min(55vw, 620px); aspect-ratio: 1; }
-    .group-photo-placeholder::before { left: -13%; bottom: -70%; }
-    .group-photo-placeholder::after { right: -12%; top: -80%; width: min(48vw, 520px); border-color: rgba(229,198,128,.35); }
-    .group-photo-content { position: relative; z-index: 1; padding: 28px; }
-    .group-photo-kicker { color: #f0d58e; font-size: 13px; font-weight: 800; letter-spacing: .17em; text-transform: uppercase; }
-    .group-photo-content h2 { margin: 10px 0 5px; font-family: Manrope, Arial, sans-serif; font-size: clamp(30px, 4vw, 49px); letter-spacing: -.035em; }
-    .group-photo-content p { margin: 0; color: rgba(255,255,255,.82); font-size: 17px; }
+    .group-photo-carousel { --w: 72%; --gap: 22px; max-width: 1360px; }
+    .group-photo-carousel .ra-stage { padding-top: calc(var(--w) * .36 + 75px); }
+    .group-photo-carousel .ra-slide { top: 0; }
+    .group-photo-carousel .ra-slide > img,
+    .group-photo-carousel .group-coming-panel { display: block; width: 100%; aspect-ratio: 3 / 1; height: auto; border-radius: 14px; box-shadow: 0 9px 30px rgba(32,35,41,.17); }
+    .group-photo-carousel .ra-slide > img { object-fit: cover; background: #f4f1ed; }
+    .group-photo-carousel .group-coming-panel { position: relative; display: flex; min-height: 190px; flex-direction: column; align-items: center; justify-content: center; overflow: hidden; padding: 20px; color: #fff; text-align: center; background: radial-gradient(ellipse at 50% 115%, rgba(224,190,111,.52), transparent 42%), linear-gradient(120deg, #351316 0%, #681c24 52%, #311317 100%); }
+    .group-photo-carousel .group-coming-panel::before,
+    .group-photo-carousel .group-coming-panel::after { content: ""; position: absolute; z-index: 0; width: min(42vw, 440px); aspect-ratio: 1; border: 1px solid rgba(255,255,255,.2); border-radius: 50%; pointer-events: none; }
+    .group-photo-carousel .group-coming-panel::before { left: -9%; bottom: -100%; }
+    .group-photo-carousel .group-coming-panel::after { right: -8%; top: -110%; border-color: rgba(229,198,128,.4); }
+    .group-photo-carousel .group-photo-kicker,
+    .group-photo-carousel .group-coming-title,
+    .group-photo-carousel .group-coming-note { position: relative; z-index: 1; }
+    .group-photo-carousel .group-photo-kicker { color: #f0d58e; font-size: 12px; font-weight: 800; letter-spacing: .17em; text-transform: uppercase; }
+    .group-photo-carousel .group-coming-title { margin-top: 8px; font: 800 clamp(25px, 3vw, 40px)/1.15 Manrope,Arial,sans-serif; letter-spacing: -.035em; }
+    .group-photo-carousel .group-coming-note { margin-top: 7px; color: rgba(255,255,255,.84); font-size: 16px; }
+    .group-photo-carousel .ra-slide > strong { display: block; margin: 12px 0 4px; color: #42191c; font: 700 clamp(15px, 1.4vw, 19px)/1.35 Manrope,Arial,sans-serif; }
+    .group-photo-carousel .ra-arrow { top: calc(var(--w) * .15); }
+    .group-photo-carousel .ra-dots { margin-top: 4px; }
     .people-hierarchy { gap: 34px; }
     .section-label { font-size: 15px; letter-spacing: .15em; color: #781b23; padding-bottom: 11px; }
     .people-row { gap: 20px; }
@@ -52,7 +64,13 @@
     .portrait-placeholder small { color: #6b6060; font-size: 12px; font-weight: 700; }
     @media(max-width: 700px) {
       .group-photo-section { margin-bottom: 38px; }
-      .group-photo-placeholder { min-height: 245px; border-radius: 15px; }
+      .group-photo-carousel { --w: 82%; --gap: 14px; }
+      .group-photo-carousel .ra-stage { padding-top: calc(var(--w) * .45 + 68px); }
+      .group-photo-carousel .group-coming-panel { min-height: 150px; border-radius: 12px; }
+      .group-photo-carousel .group-photo-kicker { font-size: 10px; }
+      .group-photo-carousel .group-coming-title { font-size: clamp(20px, 5vw, 29px); }
+      .group-photo-carousel .group-coming-note { font-size: 13px; }
+      .group-photo-carousel .ra-arrow { top: calc(var(--w) * .17); }
       .people-row .person { min-height: 0; }
       .people-row .portrait { width: 130px; flex-basis: 130px; min-height: 175px; }
       .people-row .inside { padding: 17px; }
@@ -104,16 +122,26 @@
         <p class="team-intro">Meet the students and researchers advancing safe, intelligent mobility at the SAMS Laboratory.</p>
       </div>
 
-      <!-- Group photo slot: add the photo as assets/SAMS Lab Group Photo- Fall 2026.jpg when available. -->
-      <section class="group-photo-section" aria-labelledby="group-photo-heading">
-        <div class="group-photo-placeholder" role="img" aria-label="Fall 2026 SAMS Laboratory group photo will be added soon">
-          <div class="group-photo-content">
-            <span class="group-photo-kicker">SAMS Laboratory · Fall 2026</span>
-            <h2 id="group-photo-heading">Our team, together</h2>
-            <p>Group photo coming soon</p>
+      <!-- Group photo carousel: when available, replace the second panel with assets/SAMS Lab Group Photo- Fall 2026.jpg. -->
+      <section class="group-photo-section" aria-label="SAMS Laboratory photos">
+        <div class="ra-carousel group-photo-carousel" aria-roledescription="carousel" aria-label="SAMS Lab photo gallery">
+          <button class="ra-arrow ra-prev" type="button" aria-label="Previous photo">&#10094;</button>
+          <div class="ra-stage">
+            <div class="ra-slide group-photo-slide" role="group" aria-roledescription="slide" aria-label="Texas State University and SAMS Laboratory">
+              <img src="assets/TXSU-SAMS-Fall-2026.webp" alt="Texas State University campus sign at sunset with the SAMS Lab logo in the upper right" />
+              <strong>Texas State University · SAMS Laboratory</strong>
+            </div>
+            <div class="ra-slide group-coming-slide" role="group" aria-roledescription="slide" aria-label="Fall 2026 group photo coming soon">
+              <div class="group-coming-panel">
+                <span class="group-photo-kicker">SAMS Laboratory · Fall 2026</span>
+                <span class="group-coming-title">Our team, together</span>
+                <span class="group-coming-note">Group photo coming soon</span>
+              </div>
+              <strong>Fall 2026 Group Photo</strong>
+            </div>
           </div>
-          <span class="group-photo-orbit orbit-one" aria-hidden="true"></span>
-          <span class="group-photo-orbit orbit-two" aria-hidden="true"></span>
+          <button class="ra-arrow ra-next" type="button" aria-label="Next photo">&#10095;</button>
+          <div class="ra-dots" role="tablist" aria-label="Choose a SAMS Lab photo"></div>
         </div>
       </section>
 
