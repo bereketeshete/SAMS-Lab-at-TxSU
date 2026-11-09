@@ -315,4 +315,47 @@ body.home main{padding-top:28px;padding-bottom:42px}
 @media(max-width:520px){.footer-main{grid-template-columns:1fr;gap:19px}.footer-identity{grid-column:auto}.footer-column h2{font-size:19px}.footer-bottom{align-items:flex-start;flex-direction:column;padding:12px 24px}.footer-txst-logo img{width:245px}}
 
 
+/* Event-based gallery albums with a single-view horizontal image slider */
+.gallery-page-shell{max-width:1200px}
+.event-album{margin:28px auto 50px;max-width:1120px;padding:clamp(16px,2.8vw,32px);border:1px solid #e6e1d6;border-radius:16px;background:linear-gradient(145deg,#fff 0%,#fbfaf7 100%);box-shadow:0 14px 36px rgba(42,31,22,.08)}
+.event-album-header{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:18px}
+.event-album-title-wrap{display:flex;align-items:center;gap:14px}
+.event-folder-icon{display:grid;place-items:center;width:48px;height:48px;border-radius:12px;background:#f3ead5;color:#8a6d34;font-size:22px}
+.event-album-header .eyebrow{margin:0 0 4px;font-size:12px;letter-spacing:.13em}
+.event-album-header h2{margin:0;font:700 clamp(24px,3vw,34px)/1.2 "Roboto Slab",Georgia,serif;color:#342326}
+.event-album-count{flex:none;padding:8px 12px;border-radius:999px;background:#f3ead5;color:#6e551f;font:600 14px/1 "Work Sans",Arial,sans-serif}
+.event-carousel{position:relative;overflow:hidden;border-radius:12px;background:#171719}
+.event-carousel-track{display:flex;width:100%;overflow-x:auto;overscroll-behavior-x:contain;scroll-snap-type:x mandatory;scroll-behavior:smooth;scrollbar-width:none;outline-offset:-4px}
+.event-carousel-track::-webkit-scrollbar{display:none}
+.event-slide{position:relative;flex:0 0 100%;margin:0;scroll-snap-align:start;scroll-snap-stop:always;aspect-ratio:16/9;background:#171719}
+.event-slide img{display:block;width:100%;height:100%;object-fit:contain}
+.event-slide figcaption{position:absolute;left:0;right:0;bottom:0;padding:34px 18px 13px;background:linear-gradient(transparent,rgba(0,0,0,.72));color:#fff;font:500 15px/1.4 "Work Sans",Arial,sans-serif}
+.event-arrow{position:absolute;z-index:2;top:50%;transform:translateY(-50%);width:44px;height:44px;border:1px solid rgba(255,255,255,.72);border-radius:50%;background:rgba(35,23,22,.68);color:#fff;font-size:18px;cursor:pointer;transition:background .2s,transform .2s}
+.event-arrow:hover{background:#806628;transform:translateY(-50%) scale(1.06)}
+.event-prev{left:14px}.event-next{right:14px}
+.event-carousel-controls{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:15px 2px 0}
+.event-dots{display:flex;flex-wrap:wrap;gap:8px}
+.event-dots button{width:11px;height:11px;padding:0;border:0;border-radius:50%;background:#d6d1c6;cursor:pointer}
+.event-dots button[aria-current="true"]{width:27px;border-radius:99px;background:#ad8d4b}
+.event-counter{color:#666056;font:600 14px/1.4 "Work Sans",Arial,sans-serif}
+@media(max-width:600px){.event-album{padding:15px;margin-top:20px}.event-folder-icon{width:40px;height:40px}.event-album-title-wrap{gap:10px}.event-album-count{font-size:12px}.event-arrow{width:36px;height:36px}.event-prev{left:8px}.event-next{right:8px}.event-slide figcaption{font-size:13px;padding:30px 13px 10px}.event-carousel-controls{align-items:flex-start;flex-direction:column;gap:9px}}
+@media(prefers-reduced-motion:reduce){.event-carousel-track{scroll-behavior:auto}.event-arrow{transition:none}}
 
+.event-arrow:disabled{opacity:.38;cursor:default}.event-arrow:disabled:hover{background:rgba(35,23,22,.68);transform:translateY(-50%)}
+
+/* Albums stay compact until a visitor opens one. */
+.event-album{padding:0;overflow:hidden}
+.event-album-header{list-style:none;display:flex;min-height:92px;margin:0;padding:18px clamp(16px,2.8vw,32px);cursor:pointer;transition:background .18s ease}
+.event-album-header::-webkit-details-marker{display:none}
+.event-album-header:hover{background:#faf7ef}
+.event-album-title-wrap{display:flex;align-items:center;gap:14px}
+.event-album-title-copy{display:flex;flex-direction:column;gap:3px}
+.event-album-title-copy .eyebrow{display:block;color:#806628;margin:0;font:600 12px/1.3 "Work Sans",Arial,sans-serif;letter-spacing:.13em;text-transform:uppercase}
+.event-album-title{display:block;color:#342326;font:700 clamp(22px,2.5vw,30px)/1.2 "Roboto Slab",Georgia,serif}
+.event-album-count{display:flex;align-items:center;gap:12px}
+.event-album-count::after{content:"＋";font:500 20px/1 "Work Sans",Arial,sans-serif;color:#806628;transition:transform .2s ease}
+.event-album[open] .event-album-count::after{content:"−"}
+.event-album-content{padding:0 clamp(14px,2vw,24px) 20px}
+.event-album-content .event-carousel{max-width:100%;margin:0 auto}
+.event-album-content .event-carousel-controls{padding-left:3px;padding-right:3px}
+@media(max-width:600px){.event-album-header{min-height:78px;padding:14px}.event-album-title-wrap{gap:10px}.event-album-content{padding:0 10px 14px}}
