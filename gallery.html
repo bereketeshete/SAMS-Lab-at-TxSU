@@ -24,18 +24,18 @@
     </div>
 
     <!-- Event collection: duplicate this section to add another event or gallery title. -->
-    <section class="event-album" aria-labelledby="san-marcos-title">
-      <header class="event-album-header">
-        <div class="event-album-title-wrap">
+    <details class="event-album" aria-labelledby="san-marcos-title">
+      <summary class="event-album-header">
+        <span class="event-album-title-wrap">
           <span class="event-folder-icon" aria-hidden="true">▰</span>
-          <div>
-            <p class="eyebrow">Photo collection · 6 images</p>
-            <h2 id="san-marcos-title">City of San Marcos, TX</h2>
-          </div>
-        </div>
-        <span class="event-album-count">01 / 06</span>
-      </header>
-
+          <span class="event-album-title-copy">
+            <span class="eyebrow">Photo collection</span>
+            <span class="event-album-title" id="san-marcos-title">City of San Marcos</span>
+          </span>
+        </span>
+        <span class="event-album-count">6 images</span>
+      </summary>
+      <div class="event-album-content">
       <div class="event-carousel" data-gallery-carousel role="region" aria-roledescription="carousel" aria-label="City of San Marcos, Texas photo collection">
         <button class="event-arrow event-prev" type="button" aria-label="Previous image">&#10094;</button>
         <div class="event-carousel-track" tabindex="0" aria-label="Photos. Use left and right arrow keys to browse.">
@@ -52,7 +52,8 @@
         <div class="event-dots" role="group" aria-label="Choose a photo"></div>
         <span class="event-counter" aria-live="polite">Image 1 of 6</span>
       </div>
-    </section>
+      </div>
+    </details>
 
     <!-- Future albums can be added by duplicating .event-album and changing its title and image list. -->
   </div>
