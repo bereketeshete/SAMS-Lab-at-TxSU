@@ -17,7 +17,7 @@
   <style>
 
     .team-heading {
-      font-family: Manrope, Arial, sans-serif;
+      font-family: Roboto Slab, Arial, sans-serif;
       font-size: clamp(42px, 4.4vw, 64px);
       font-weight: 800;
       letter-spacing: -0.045em;
@@ -42,9 +42,9 @@
     .group-photo-carousel .group-coming-title,
     .group-photo-carousel .group-coming-note { position: relative; z-index: 1; }
     .group-photo-carousel .group-photo-kicker { color: #f0d58e; font-size: 12px; font-weight: 800; letter-spacing: .17em; text-transform: uppercase; }
-    .group-photo-carousel .group-coming-title { margin-top: 8px; font: 800 clamp(25px, 3vw, 40px)/1.15 Manrope,Arial,sans-serif; letter-spacing: -.035em; }
+    .group-photo-carousel .group-coming-title { margin-top: 8px; font: 800 clamp(25px, 3vw, 40px)/1.15 Roboto Slab,Arial,sans-serif; letter-spacing: -.035em; }
     .group-photo-carousel .group-coming-note { margin-top: 7px; color: rgba(255,255,255,.84); font-size: 16px; }
-    .group-photo-carousel .ra-slide > strong { display: block; margin: 12px 0 4px; color: #42191c; font: 700 clamp(15px, 1.4vw, 19px)/1.35 Manrope,Arial,sans-serif; }
+    .group-photo-carousel .ra-slide > strong { display: block; margin: 12px 0 4px; color: #42191c; font: 700 clamp(15px, 1.4vw, 19px)/1.35 Roboto Slab,Arial,sans-serif; }
     .group-photo-carousel .ra-arrow { top: calc(var(--w) * .15); }
     .group-photo-carousel .ra-dots { margin-top: 4px; }
     .people-hierarchy { gap: 34px; }
@@ -55,12 +55,12 @@
     .people-row .portrait img { object-fit: cover; }
     .people-row .inside { padding: 20px 22px; }
     .people-row .role { font-size: 12px; letter-spacing: .13em; }
-    .people-row .inside h3 { margin: 0 0 9px; font-family: Manrope, Arial, sans-serif; font-size: clamp(23px, 2vw, 28px); line-height: 1.2; font-weight: 800; letter-spacing: -.025em; color: #42191c; }
+    .people-row .inside h3 { margin: 0 0 9px; font-family: Roboto Slab, Arial, sans-serif; font-size: clamp(23px, 2vw, 28px); line-height: 1.2; font-weight: 800; letter-spacing: -.025em; color: #42191c; }
     .people-row .inside p { margin: 0; font-size: 16px; line-height: 1.65; color: #555c65; }
     .student-meta { display: inline-block; margin-top: 7px; color: #626973; font-size: 14px; line-height: 1.6; }
     .student-meta strong { color: #3e4148; }
     .portrait-placeholder { flex-direction: column; gap: 8px; color: #781b23; background: radial-gradient(circle at 50% 35%, #fff 0 18%, transparent 19%), linear-gradient(145deg,#f4f1ed,#e8e2d9) !important; }
-    .portrait-placeholder span { display: grid; place-items: center; width: 76px; height: 76px; border-radius: 50%; color: #fff; background: #781b23; font: 800 27px Manrope,Arial,sans-serif; box-shadow: 0 5px 16px rgba(64,20,24,.2); }
+    .portrait-placeholder span { display: grid; place-items: center; width: 76px; height: 76px; border-radius: 50%; color: #fff; background: #781b23; font: 800 27px Roboto Slab,Arial,sans-serif; box-shadow: 0 5px 16px rgba(64,20,24,.2); }
     .portrait-placeholder small { color: #6b6060; font-size: 12px; font-weight: 700; }
     @media(max-width: 700px) {
       .group-photo-section { margin-bottom: 38px; }
@@ -83,35 +83,27 @@
   </style>
 </head>
 
-<body>
+<body class="site-page">
 
   <!-- HEADER -->
-  <header>
-    <a class="brand" href="index.html">
-      <img alt="SAMS Lab logo" src="assets/SAMS-Logo.png"/>
-
-      <span class="brand-text">
-        <strong>SAMS Laboratory</strong>
-        Texas State University
-      </span>
-    </a>
-
-    <button aria-label="Toggle navigation" class="menu">
-      ☰ Menu
-    </button>
-
-    <nav aria-label="Main navigation">
-      <a href="index.html">Home</a>
-      <a href="people.html">People</a>
-      <a href="research.html">Research</a>
-      <a href="publications.html">Publications</a>
-      <a href="projects.html">Projects</a>
-      <a href="news.html">News</a>
-      <a href="gallery.html">Gallery</a>
-      <a href="capabilities.html">Capabilities</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-  </header>
+  <header class="site-header">
+  <a class="brand" href="index.html" aria-label="SAMS Laboratory home">
+    <img src="assets/SAMS-Logo.png" alt="SAMS Laboratory logo" />
+    <span class="brand-text"><strong>SAMS Laboratory</strong><span>Texas State University</span></span>
+  </a>
+  <button class="menu" type="button" aria-label="Toggle navigation" aria-expanded="false">☰ Menu</button>
+  <nav aria-label="Main navigation">
+    <a href="index.html">Home</a>
+    <a href="people.html">People</a>
+    <a href="research.html">Research</a>
+    <a href="publications.html">Publications</a>
+    <a href="projects.html">Projects</a>
+    <a href="news.html">News</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="capabilities.html">Capabilities</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
 
   <!-- MAIN CONTENT -->
   <main>
@@ -128,7 +120,7 @@
           <button class="ra-arrow ra-prev" type="button" aria-label="Previous photo">&#10094;</button>
           <div class="ra-stage">
             <div class="ra-slide group-photo-slide" role="group" aria-roledescription="slide" aria-label="Texas State University and SAMS Laboratory">
-              <img src="assets/TXSU-SAMS Fall 2026.png" alt="Texas State University campus sign at sunset with the SAMS Lab logo in the upper right" />
+              <img src="assets/TXSU-SAMS-Fall-2026.webp" alt="Texas State University campus sign at sunset with the SAMS Lab logo in the upper right" />
               <strong>Texas State University · SAMS Laboratory</strong>
             </div>
             <div class="ra-slide group-coming-slide" role="group" aria-roledescription="slide" aria-label="Fall 2026 group photo coming soon">
@@ -517,15 +509,36 @@
   </main>
 
   <!-- FOOTER -->
-  <footer>
-    <span>
-      <b>SAMS LAB</b> · Safe Autonomy for Mobility Systems
-    </span>
-
-    <span>
-      Ingram School of Engineering · Texas State University · San Marcos, TX
-    </span>
-  <span>© 2026 SAMS Laboratory · Texas State University. All rights reserved.</span></footer>
+  <footer class="site-footer">
+  <div class="footer-main">
+    <div class="footer-identity">
+      <a class="footer-sams-logo" href="index.html" aria-label="SAMS Laboratory home">
+        <img src="assets/SAMS-Logo.png" alt="SAMS Laboratory" />
+      </a>
+      <p class="footer-tagline">Safe Autonomy for Mobility Systems</p>
+      <a class="footer-school-link" href="https://www.engineering.txst.edu/" target="_blank" rel="noopener">Ingram School of Engineering <span aria-hidden="true">↗</span></a>
+    </div>
+    <div class="footer-column">
+      <h2>Connect with SAMS</h2>
+      <a href="mailto:natnegash@txstate.edu">natnegash@txstate.edu</a>
+      <a href="https://samslabtxst.net/" target="_blank" rel="noopener">samslabtxst.net <span aria-hidden="true">↗</span></a>
+      <a href="https://natnael-m-negash.net/" target="_blank" rel="noopener">Faculty website <span aria-hidden="true">↗</span></a>
+      <a href="https://scholar.google.com/citations?user=de8_IgUAAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar <span aria-hidden="true">↗</span></a>
+      <a href="https://www.linkedin.com/in/natnael-m-negash-ph-d-12721473/" target="_blank" rel="noopener">LinkedIn <span aria-hidden="true">↗</span></a>
+    </div>
+    <div class="footer-column footer-school">
+      <h2>Visit Ingram Hall</h2>
+      <p>Texas State University<br />601 University Drive<br />San Marcos, TX 78666</p>
+      <a href="tel:+15122451826">Office: (512) 245-1826</a>
+      <a class="footer-contact" href="contact.html">Contact the Lab <span aria-hidden="true">→</span></a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <a class="footer-txst-logo" href="https://www.txst.edu/" target="_blank" rel="noopener" aria-label="Texas State University website"><img src="assets/txst-horizontal-logo.png" alt="Texas State University" /></a>
+    <span>© 2026 SAMS Laboratory · Texas State University</span>
+    <a href="https://www.txst.edu/" target="_blank" rel="noopener">Texas State University <span aria-hidden="true">↗</span></a>
+  </div>
+</footer>
 
   <script src="script.js"></script>
 
