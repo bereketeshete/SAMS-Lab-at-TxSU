@@ -300,8 +300,8 @@ body.home main{padding-top:28px;padding-bottom:42px}
 .footer-tagline{margin:7px 0 12px;color:#f2eee7;font-size:15px;line-height:1.4}
 .footer-school-link{font-size:14px;color:#e4c879}
 .footer-column{display:flex;flex-direction:column;align-items:flex-start;gap:5px}
-.footer-column h2{margin:0 0 6px;color:#fff;font:600 16px/1.3 "Roboto Slab",Georgia,serif}
-.footer-column a,.footer-column p{margin:0;color:#f3f0ec;font:400 14px/1.45 "Work Sans",Arial,sans-serif}
+.footer-column h2{margin:0 0 6px;color:#fff;font:600 20px/1.3 "Roboto Slab",Georgia,serif}
+.footer-column a,.footer-column p{margin:0;color:#f3f0ec;font:400 15px/1.45 "Work Sans",Arial,sans-serif}
 .footer-column p{margin-bottom:2px;color:#eee8e3}
 .footer-column a:hover,.footer-school-link:hover{color:#edcf8c;text-decoration:underline;text-underline-offset:3px}
 .footer-column .footer-contact{display:inline-flex;align-items:center;gap:9px;margin-top:5px;padding:8px 13px;border:1px solid #d7bd76;border-radius:4px;color:#fff;font-weight:600}
@@ -359,3 +359,29 @@ body.home main{padding-top:28px;padding-bottom:42px}
 .event-album-content .event-carousel{max-width:100%;margin:0 auto}
 .event-album-content .event-carousel-controls{padding-left:3px;padding-right:3px}
 @media(max-width:600px){.event-album-header{min-height:78px;padding:14px}.event-album-title-wrap{gap:10px}.event-album-content{padding:0 10px 14px}}
+
+
+/* Equipment picture menu on the Capabilities page */
+.capabilities-shell{max-width:1320px}
+.capability-section{margin:34px 0 48px}
+.capability-section>.academic-heading{margin-bottom:18px}
+.capability-section>.academic-heading span{color:#716952;font-size:14px;font-weight:600}
+.capability-equipment-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
+.capability-equipment-card{display:flex;flex-direction:column;min-width:0;overflow:hidden;border:1px solid #e2ded5;border-radius:14px;background:#fff;color:inherit;box-shadow:0 8px 24px rgba(42,31,22,.06);transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease}
+.capability-equipment-card:hover{transform:translateY(-5px);border-color:#ad8d4b;box-shadow:0 16px 34px rgba(42,31,22,.14)}
+.capability-card-media{position:relative;display:flex;align-items:center;justify-content:center;aspect-ratio:16/9;overflow:hidden;background:linear-gradient(135deg,#f4f2ed,#e7ece8);color:#806628}
+.capability-card-media svg{width:72%;height:72%;max-height:245px;color:#4d6c5d;filter:drop-shadow(0 9px 8px rgba(25,36,30,.13))}
+.capability-unit-badge{position:absolute;top:15px;right:15px;padding:8px 12px;border:1px solid rgba(173,141,75,.45);border-radius:999px;background:rgba(255,255,255,.93);color:#604a21;font:600 13px/1.1 "Work Sans",Arial,sans-serif}
+.capability-art-label{position:absolute;left:18px;bottom:15px;color:#5a605b;font:600 13px/1.3 "Work Sans",Arial,sans-serif;letter-spacing:.04em}
+.yahboom-placeholder{background:linear-gradient(135deg,#f5f3ee,#ece8dd)}
+.yahboom-placeholder img{width:min(280px,52%);height:64%;object-fit:contain;opacity:.46}
+.capability-photo-note{position:absolute;left:0;right:0;bottom:0;padding:28px 18px 14px;background:linear-gradient(transparent,rgba(40,34,25,.56));color:#fff;text-align:center;font:600 14px/1.4 "Work Sans",Arial,sans-serif}
+.capability-card-copy{padding:22px 24px 24px}
+.capability-card-copy .eyebrow{margin:0 0 6px;color:#806628;font-size:12px;letter-spacing:.12em}
+.capability-card-copy h3{margin:0 0 9px;color:#342326;font:700 23px/1.25 "Roboto Slab",Georgia,serif}
+.capability-card-copy p:not(.eyebrow){margin:0 0 16px;color:#565b63;font-size:16px;line-height:1.55}
+.capability-card-link{display:inline-flex;align-items:center;gap:7px;color:#6f5520;font:600 15px/1.4 "Work Sans",Arial,sans-serif}
+.capability-equipment-card:hover .capability-card-link{text-decoration:underline;text-underline-offset:3px}
+.supported-work .cards{margin-top:6px}
+@media(max-width:760px){.capability-equipment-grid{grid-template-columns:1fr}.capability-card-media{aspect-ratio:16/9}}
+@media(prefers-reduced-motion:reduce){.capability-equipment-card{transition:none}.capability-equipment-card:hover{transform:none}}
