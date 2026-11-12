@@ -2,6 +2,24 @@
   <link rel="icon" type="image/png" sizes="48x48" href="/assets/sams-favicon-48.png">
   <link rel="icon" type="image/png" sizes="192x192" href="/assets/sams-favicon-192.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/sams-favicon-180.png">
+<style>
+/* Compact the office, address, and email rows while preserving their type size. */
+.contact-location-card{gap:10px;padding:18px 22px}
+.location-detail{gap:10px}
+.location-icon{width:30px;height:30px}
+/* Refined SAMS monogram panel with quiet maroon-and-gold route detailing. */
+.contact-hero-art{isolation:isolate;min-height:330px;border-radius:22px;background:linear-gradient(140deg,#fbfaf6 0%,#f1eee6 55%,#e9e4d8 100%);box-shadow:0 18px 42px rgba(47,31,24,.09)}
+.contact-hero-art:before{z-index:-1;width:72%;aspect-ratio:1;border:1px solid rgba(80,18,20,.12)}
+.contact-hero-art:after{z-index:-1;width:89%;aspect-ratio:1;border:1px dashed rgba(173,141,75,.38)}
+.contact-orbit{z-index:0}
+.orbit-one{width:77%;height:43%;border-top:2px solid rgba(173,141,75,.9);border-bottom:2px solid rgba(173,141,75,.9);transform:rotate(-27deg)}
+.orbit-two{width:59%;height:29%;border-top:1px solid rgba(80,18,20,.72);border-bottom:1px solid rgba(80,18,20,.72);transform:rotate(34deg)}
+.contact-art-mark{z-index:1;position:relative;width:142px;height:142px;border:1px solid #d7bd76;border-radius:34px;background:linear-gradient(145deg,#5b1d22,#3f1015);color:#fff;font:700 92px/1 Georgia,'Times New Roman',serif;letter-spacing:-.08em;text-shadow:0 3px 0 rgba(0,0,0,.13);box-shadow:0 16px 34px rgba(54,16,20,.24),inset 0 0 0 7px rgba(215,189,118,.12);transform:rotate(-5deg)}
+.contact-art-mark:before{content:"";position:absolute;inset:11px;border:1px solid rgba(231,210,156,.7);border-radius:25px}
+.contact-art-mark:after{content:"";position:absolute;bottom:24px;left:50%;width:32px;height:2px;border-radius:2px;background:#d7bd76;transform:translateX(-50%)}
+.contact-art-label{padding:8px 12px;border:1px solid rgba(80,18,20,.08);background:rgba(255,255,255,.94);color:#501214;font-size:10px;box-shadow:0 5px 16px rgba(36,24,23,.08)}
+@media(max-width:560px){.contact-location-card{gap:10px;padding:17px}.contact-hero-art{min-height:245px}.contact-art-mark{width:116px;height:116px;font-size:76px}.contact-art-mark:before{inset:9px;border-radius:22px}.contact-art-mark:after{bottom:19px;width:27px}}
+</style>
 </head><body class="site-page contact-page"><header class="site-header">
   <a class="brand" href="index.html" aria-label="SAMS Laboratory home">
     <img src="assets/SAMS-Logo.png" alt="SAMS Laboratory logo" />
@@ -57,7 +75,7 @@
   <div class="footer-main">
     <div class="footer-identity">
       <a class="footer-sams-logo" href="index.html" aria-label="SAMS Laboratory home">
-        <img src="assets/SAMS-Logo.png" alt="SAMS Laboratory" />
+        <img src="assets/05_SAMS_Logo_All_White_transparent.png" alt="SAMS Laboratory" />
       </a>
       <p class="footer-tagline">Safe Autonomy for Mobility Systems</p>
       <a class="footer-school-link" href="https://www.engineering.txst.edu/" target="_blank" rel="noopener">Ingram School of Engineering <span aria-hidden="true">↗</span></a>
